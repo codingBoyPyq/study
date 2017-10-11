@@ -1,0 +1,15 @@
+适配器模式
+定义：将一个类的接口转换成客户希望的另外一个接口，适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作
+结构说明：
+class    interface      class
+client      target     adaptee
+
+               ^
+            class
+           com.pyq.designPattern.adapter
+
+
+client ;客户端，调用自己需要的领域接口target
+target：定义客户端需要的跟特定领域相关的接口
+adaptee：已经存在的接口，但与客户端要求的特定领域接口不一致，需要被适配
+com.pyq.designPattern.adapter：适配器，把adaptee适配成为client需要的target

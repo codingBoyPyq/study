@@ -9,14 +9,6 @@ import java.util.Arrays;
  */
 public class BuildBinaryTree {
     TreeNode root = null;
-    class TreeNode{
-        TreeNode left;
-        TreeNode right;
-        int val;
-        TreeNode(int val){
-            this.val = val;
-        }
-    }
     public TreeNode reConstructBinaryTree(int [] pre,int [] in){
         TreeNode rootNode = null;
         if(pre==null||in==null||pre.length==0||in.length==0||pre.length!=in.length)
@@ -41,5 +33,41 @@ public class BuildBinaryTree {
             rootNode.right=reConstructBinaryTree(childPre,childIn);
         }
         return rootNode;
+    }
+    /**
+     * Given a binary tree, find its minimum depth.
+     * The minimum depth is the number of nodes along the shortest path
+     * from the root node down to the nearest leaf node.
+     */
+    public static int findTreeMinimumDepth(TreeNode root){
+        if(root==null)
+            return 0;
+        if(root.left == null)
+            return findTreeMinimumDepth(root.right) + 1;
+        if(root.right == null)
+            return findTreeMinimumDepth(root.left) + 1;
+        int leftDepth = findTreeMinimumDepth(root.left);
+        int rightDepth = findTreeMinimumDepth(root.right);
+        return leftDepth < rightDepth ? leftDepth +1 : rightDepth +1;
+    }
+
+    /**
+     *Given a binary tree, find its maximum depth.
+     * The maximum depth is the number of nodes
+     * along the longest path from the root node
+     * down to the farthest leaf node.
+     */
+    public static int findTreeMaximumDepth(TreeNode root) {
+        if (root == null)
+            return 0;
+        int leftDepth = findTreeMaximumDepth(root.left);
+        int rightDepth = findTreeMaximumDepth(root.right);
+        return leftDepth > rightDepth ? leftDepth + 1 : rightDepth + 1;
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = TreeNode.getBinaryTree();
+        System.out.println(findTreeMinimumDepth(root));
+        System.out.println(findTreeMaximumDepth(root));
     }
 }

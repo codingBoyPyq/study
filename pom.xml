@@ -25,6 +25,8 @@
     <version.hdfs>2.7.3</version.hdfs>
     <version.okhttp3>3.4.1</version.okhttp3>
     <version.jedis>2.8.0</version.jedis>
+
+    <version.drools>7.5.0.Final</version.drools>
   </properties>
 
   <dependencies>
@@ -98,6 +100,58 @@
       <artifactId>mvel2</artifactId>
       <version>${version.mvel}</version>
     </dependency>
+
+    <!--<dependency>-->
+      <!--<groupId>org.drools</groupId>-->
+      <!--<artifactId>drools-core</artifactId>-->
+      <!--<version>${version.drools}</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.drools</groupId>-->
+      <!--<artifactId>drools-compiler</artifactId>-->
+      <!--<version>${version.drools}</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.drools</groupId>-->
+      <!--<artifactId>drools-decisiontables</artifactId>-->
+      <!--<version>${version.drools}</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.kie</groupId>-->
+      <!--<artifactId>kie-api</artifactId>-->
+      <!--<version>${version.drools}</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.drools</groupId>-->
+      <!--<artifactId>knowledge-api</artifactId>-->
+      <!--<version>6.5.0.Final</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.drools</groupId>-->
+      <!--<artifactId>knowledge-internal-api</artifactId>-->
+      <!--<version>5.6.0.Final</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.drools</groupId>-->
+      <!--<artifactId>drools-jsr94</artifactId>-->
+      <!--<version>7.2.0.Final</version>-->
+    <!--</dependency>-->
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>drools-bom</artifactId>
+      <type>pom</type>
+      <version>${version.drools}</version>
+      <scope>import</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.kie</groupId>
+      <artifactId>kie-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>drools-compiler</artifactId>
+      <scope>runtime</scope>
+    </dependency>
   </dependencies>
   <build>
     <finalName>Study-Demo</finalName>
@@ -110,6 +164,12 @@
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-maven-plugin</artifactId>
+        <version>7.5.0.Final</version>
+        <extensions>true</extensions>
       </plugin>
     </plugins>
   </build>

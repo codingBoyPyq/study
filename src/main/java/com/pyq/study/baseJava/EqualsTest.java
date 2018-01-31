@@ -41,7 +41,12 @@ public class EqualsTest {
 //        Long userId = 345261l;
 //        System.out.println(list.remove(userId));
 //        System.out.println(list.get(0));
-        System.out.println(formatDate(new Date()));
+
+        long a = 2147483648l;
+        int b = (int) a;
+
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(Integer.MAX_VALUE);
     }
     public static void stringEquals(){
         String a = "";

@@ -1,4 +1,4 @@
-package com.pyq.study.algorithm;
+package com.pyq.study.algorithm.binaryTree;
 
 /**
  *                                            1
@@ -39,5 +39,27 @@ public class TreeNode {
         root.right.right.right = new TreeNode(12);
         root.right.right.left.right = new TreeNode(13);
         return root;
+    }
+
+    public static void printBinaryTree(TreeNode root){
+
+        System.out.println();
+    }
+    public static String generatorBlank(String separator,int length){
+        if(length==0)
+            return "";
+        else if(length==1)
+            return separator;
+        if(length%2==0) {
+            String tempStr =  generatorBlank(separator,length/2);
+            return tempStr + tempStr;
+        }else{
+            String tempStr =  generatorBlank(separator,length/2);
+            return tempStr + tempStr + separator;
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(generatorBlank("*",180));
     }
 }

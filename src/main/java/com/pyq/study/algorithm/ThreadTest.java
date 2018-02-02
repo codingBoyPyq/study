@@ -48,4 +48,7 @@ public class ThreadTest {
             }
         }
     }
+    public void test() {
+        new Thread("test").start();
+    }
 }

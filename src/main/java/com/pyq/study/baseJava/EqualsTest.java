@@ -16,8 +16,19 @@ import java.util.List;
 public class EqualsTest {
     protected static FastDateFormat fastDateFormat;
     private final static String PATTERN = "yyyy-MM-dd HH:mm:ss";
+    private static final int COUNT_BITS = Integer.SIZE - 3;
+    private static final int RUNNING    = -1 << COUNT_BITS;
+    private static final int SHUTDOWN   =  0 << COUNT_BITS;
+    private static final int STOP       =  1 << COUNT_BITS;
+    private static final int TIDYING    =  2 << COUNT_BITS;
+    private static final int TERMINATED =  3 << COUNT_BITS;
     public static void main (String[] args) throws Exception
     {
+        System.out.println(RUNNING);
+        System.out.println(SHUTDOWN);
+        System.out.println(STOP);
+        System.out.println(TIDYING);
+        System.out.println(TERMINATED);
 //        //longEquals();
 //        String a = "abcd";
 //        String b = "你好";
@@ -42,11 +53,11 @@ public class EqualsTest {
 //        System.out.println(list.remove(userId));
 //        System.out.println(list.get(0));
 
-        long a = 2147483648l;
-        int b = (int) a;
-
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println(Integer.MAX_VALUE);
+//        long a = 2147483648l;
+//        int b = (int) a;
+//
+//        System.out.println(Integer.MAX_VALUE);
+//        System.out.println(Integer.MAX_VALUE);
     }
     public static void stringEquals(){
         String a = "";

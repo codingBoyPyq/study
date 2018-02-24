@@ -1,14 +1,12 @@
 package com.pyq.study.baseJava;
 
-import com.pyq.study.Enum.ActivityStatus;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
 public class TestIdea {
-    protected static final Map<Integer,ActivityStatus> enumMap = new HashMap<>();
-    static {
-        Arrays.stream(ActivityStatus.values()).forEach(e ->enumMap.put(e.id,e));
+
+    public static void main(String[] args) {
+        Integer a = false ? new Integer(3) : test();
+        System.out.println(a);
+    }
+    public static Integer test(){
+        return null;
     }
 }

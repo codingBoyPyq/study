@@ -10,37 +10,25 @@ package com.pyq.study.algorithm.binaryTree;
  *  2       3
  */
 public class MaximumPathSum {
-    public static int maxSum = 0x80000000;
-    public static int greatSum = 0x80000000;
-
+    static int maxValue;
     public static int maxPathSum(TreeNode root) {
-         if(root==null)
-             return 0;
-         if(root.left==null)
-             return maxChildTreeSum(root.right) + root.val;
-         else if(root.right==null)
-             return maxChildTreeSum(root.left) + root.val;
-         else {
-             return  maxChildTreeSum(root.left) + root.val + maxChildTreeSum(root.right);
-         }
+        if(root==null)
+            return 0;
+        maxValue = Integer.MIN_VALUE;
+        maxChildTreeSum(root);
+        return maxValue;
     }
     public static int maxChildTreeSum(TreeNode child) {
-        if(child.left==null)
+        if(child==null)
             return 0;
-        if(child.left==null)
-            return maxChildTreeSum(child.right) + child.val;
-        else if(child.right==null)
-            return maxChildTreeSum(child.left) + child.val;
-        else {
-            int maxLeftTree =  maxChildTreeSum(child.left);
-            int maxRightTree =  maxChildTreeSum(child.right);
-            return  maxLeftTree > maxRightTree ? maxLeftTree + child.val : maxRightTree + child.val;
-        }
+        int leftMax = Math.max(0,maxChildTreeSum(child.left));
+        int rightMax = Math.max(0,maxChildTreeSum(child.right));
+        maxValue = Math.max(maxValue,leftMax + rightMax + child.val);
+        return Math.max(0, child.val + Math.max(leftMax, rightMax));
     }
 
     public static void main(String[] args) {
-        //TreeNode root = TreeNode.getBinaryTree();
-        //System.out.println(maxPathSum(root));
-        System.out.println(0x80000000);
+        TreeNode root = TreeNode.getBinaryTree();
+        System.out.println(maxPathSum(root));
     }
 }

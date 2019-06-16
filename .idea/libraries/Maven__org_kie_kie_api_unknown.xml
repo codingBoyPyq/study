@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.kie:kie-api:unknown">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/kie/kie-api/unknown/kie-api-unknown.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/kie/kie-api/unknown/kie-api-unknown.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/org/kie/kie-api/unknown/kie-api-unknown-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/kie/kie-api/unknown/kie-api-unknown-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/kie/kie-api/unknown/kie-api-unknown-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/kie/kie-api/unknown/kie-api-unknown-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
